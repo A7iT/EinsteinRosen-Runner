@@ -104,8 +104,8 @@ The number of obstacles increases every sector.
 The game is a single source file, `er_runner.cpp`. You need a C++17 compiler, OpenGL, GLU, and FreeGLUT.
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/A7iT/EinsteinRosen-Runner.git
+cd EinsteinRosen-Runner
 ```
 
 ### Windows (MSYS2 MinGW64)

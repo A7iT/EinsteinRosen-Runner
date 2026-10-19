@@ -216,6 +216,3 @@ Most gameplay values are easy to change in `er_runner.cpp`:
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-> [!NOTE]
-> Add a `LICENSE` file to the repository root before publishing, and delete this note. GitHub can generate an MIT license for you when you create the repo.

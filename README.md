@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌌 Einstein-Rosen Runner
+# Einstein-Rosen Runner
 
 **A 3D sci-fi space combat game built with C++17, OpenGL, and FreeGLUT.**
 
@@ -15,7 +15,7 @@ Pilot your spaceship through five unique sectors, collect coins, activate beacon
 
 ---
 
-## 🚀 Features
+## Features
 
 - **5 Unique Sectors** with procedurally generated environments.
 - **Space Combat** featuring enemies, bosses, missiles, and destructible obstacles.
@@ -26,7 +26,7 @@ Pilot your spaceship through five unique sectors, collect coins, activate beacon
 - **Performance Optimizations** for smoother frame pacing and rendering.
 - **Persistent Configuration** with automatic settings saving.
 
-## 🎮 Controls
+## Controls
 
 | Key | Action |
 |---|---|
@@ -42,7 +42,7 @@ Pilot your spaceship through five unique sectors, collect coins, activate beacon
 
 Additional controls and controller mappings are available in-game.
 
-## 🛠️ Built With
+## Built With
 
 - **Language:** C++17
 - **Graphics:** OpenGL, GLU, FreeGLUT
@@ -52,13 +52,13 @@ Additional controls and controller mappings are available in-game.
 - **IDE:** Visual Studio Code
 - **Platform:** Windows / Linux
 
-## 🎛️ Configuration
+## Configuration
 
 Game settings are automatically saved in `EinsteinRosen_settings.cfg` alongside the executable.
 
 Customize display, graphics, audio, controls, and gameplay settings through the in-game settings menu.
 
-## 🔧 Technical Highlights
+## Technical Highlights
 
 - Procedural sector generation with deterministic layouts.
 - Delta-time-based movement and physics.
@@ -66,6 +66,6 @@ Customize display, graphics, audio, controls, and gameplay settings through the 
 - Gravitational lensing and procedural celestial environments.
 - Optimized frame pacing, object culling, and rendering pipelines.
 
-## 📄 License
+## License
 
 Distributed under the [MIT License](LICENSE).

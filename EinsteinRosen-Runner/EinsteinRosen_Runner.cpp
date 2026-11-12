@@ -1,67 +1,6 @@
 // ============================================================================
 //  EINSTEIN-ROSEN RUNNER (Enhanced Edition) - v1.7  (PROGRESS & MENUS)
 //
-//  NEW IN v1.7  (scoreboard, save/continue, real menus)
-//    - MAIN MENU: CONTINUE / NEW GAME / SCOREBOARD / HOW TO PLAY / SETTINGS / QUIT
-//    - Progress is saved automatically at the START of every sector (EinsteinRosen_save.dat);
-//      quit any time, come back, press CONTINUE: you resume that sector with your score, hull,
-//      ammo, upgrades, difficulty and run time. A finished/lost run clears the save.
-//    - Every sector is timed: live SECTOR / RUN / BEST timer on the HUD, a time + "NEW BEST" banner
-//      on clear, personal-best times per sector, and a run summary on the game-over / victory screens.
-//    - SCOREBOARD: top-10 high scores (score, sector reached, run time, difficulty, date),
-//      best time per sector, and your last run's per-sector splits (EinsteinRosen_scores.dat).
-//    - PAUSE MENU (P or Esc): Resume / Settings / Main Menu / Quit. Esc no longer instantly quits.
-//    - NEW GAME asks before overwriting a saved run. The old X / [Back] restart shortcut is gone
-//      (it could wipe progress by accident); restart from the menus instead.
-//
-//  NEW IN v1.6  (full in-game SETTINGS screen)
-//    - Open with O (any time), or [Back] on a controller from the menu / pause. Esc, O or [B] closes it.
-//    - 5 tabs: DISPLAY, GRAPHICS, AUDIO, CONTROLS, GAMEPLAY (37 options, every one wired into the game)
-//    - Mouse (hover, click, drag sliders), keyboard (arrows, Tab/Q/E, Enter) or controller (D-pad, LB/RB, A, B)
-//    - Settings are saved to EinsteinRosen_settings.cfg next to the .exe and loaded on start
-//    - New: render-resolution scale, FPS cap, runtime fullscreen/VSync/MSAA, volumes, sensitivity,
-//      invert Y, deadzone, rumble, aim assist, difficulty, camera shake, flash intensity, FOV, HUD toggles
-//
-//  NEW IN v1.5  (same visuals, much smoother)
-//    - Frame pacing: high-resolution timer + vsync + idle-driven loop (no more 15/16/17 ms dt jitter)
-//    - Sky nebula is baked once per sector into a cubemap (was ~240 noise lookups per pixel per frame)
-//    - Billboards/glows no longer read the GL matrix back every call (removed pipeline stalls)
-//    - Coins, hearts and planets use pre-built display lists (freeglut rebuilt torus/sphere meshes per call)
-//    - Uniform locations cached, post-pass no longer pushes the whole texture state
-//    - Rocks far away use a cheap shader path (identical look at that distance)
-//    - Objects behind the camera are skipped; vectors are pre-reserved (no mid-flight reallocations)
-//    - Build with -O2 (see command below): the old build command had no optimisation at all
-//
-//  NEW IN v1.4  (CINEMATIC RENDERER)
-//    - HDR (16-bit float) pipeline, 4x MSAA, 5-level bloom, ACES tone mapping, film grain
-//    - Procedural sky: domain-warped nebulae, galactic band, dust lanes, thousands of coloured stars
-//    - Physically-based materials (GGX specular, fresnel, sky reflections) on ships, rocks, coins
-//    - Detailed cratered asteroids with procedural bump mapping; molten orbiters; damage cracks
-//    - Procedural planets: banded gas giants with storms, ocean/continent/cloud worlds with city lights,
-//      lava worlds; ring systems with planet shadows; atmospheric scattering rims
-//    - Boiling plasma sun with god rays; black hole with gravitational lensing + Doppler accretion disk
-//    - Soft particle sprites, speed blur, chromatic aberration, vignette
-//    - Press G to toggle the HDR renderer; falls back to the classic renderer if shaders are unavailable
-//
-//  NEW IN v1.3
-//    - Enemy types: KAMIKAZE (suicide drones), GUNSHIP (3-bolt spread, tanky)
-//    - Sector 5 BOSS: the GUARDIAN (3 phases: fans, bullet rings, drone summons)
-//    - DASH: double-tap Q/E (LB/RB) = barrel-roll sidestep with i-frames (costs energy)
-//    - GRAZE: slip past enemy bolts for points, energy and chain
-//    - PULSE BOMB (V / D-Pad Left): clears bolts, wrecks everything nearby
-//    - New power-ups: DRONE (auto-firing wingman) and PULSE BOMB
-//    - UPGRADE SHOP between sectors: pick 1 of 3 permanent upgrades
-//    - Fly-through RINGS (bonus, energy) and ION STORMS (drain energy, jam radar)
-//
-//  NEW IN v1.2
-//    - Boost ENERGY meter (boost drains it, it regenerates, overdraw = lockout)
-//    - Homing MISSILES (SPACE / Xbox R-Stick click) with area blast damage
-//    - Mine CHAIN REACTIONS (shot mines blast nearby mines/asteroids/enemies/YOU)
-//    - Destructible asteroids & orbiters (they have hull points now)
-//    - POWER-UPS: Shield, Rapid Fire, Magnet, Score x2, Missile Ammo
-//    - COMBO multiplier (chain coins/kills/mines; getting hit breaks the chain)
-//    - Sector TIME BONUS and FLAWLESS (no hull damage) BONUS
-//    - Enemies and asteroids can drop power-ups
 //
 //  Build + run (MSYS2 MinGW64) - save this file as EinsteinRosen_Runner.cpp, then paste the line below:
 //    g++ -O2 -std=c++17 EinsteinRosen_Runner.cpp -o EinsteinRosen_Runner_v1.7.exe -lfreeglut -lopengl32 -lglu32 -lwinmm -lgdi32; ./EinsteinRosen_Runner_v1.7.exe
